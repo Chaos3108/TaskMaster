@@ -5,14 +5,18 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 function App() {
   return (
-    <>
-    <Router>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Dashboard/>} />
-      </Routes>
-    </Router>
-    </>
+    <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
+      <div style={{ width: "250px", minWidth: "250px", background: "#282c34" }}>
+        <Navbar />
+      </div>
+
+      <div style={{ flex: 1, padding: "20px" }}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
