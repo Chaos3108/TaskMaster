@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 function App() {
   return (
     <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
-      <div style={{ width: "250px", minWidth: "250px", background: "#282c34" }}>
+      <div style={{ width: "200px", minWidth: "200px" }}>
         <Navbar />
       </div>
 

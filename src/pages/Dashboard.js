@@ -5,8 +5,23 @@ import { TbProgress } from "react-icons/tb";
 import { TiTick } from "react-icons/ti";
 import { AiFillClockCircle } from "react-icons/ai";
 const Dashboard = () => {
+  const days = [
+    { day: "Monday", tasks: 5, taskName: "Task 1" },
+    { day: "Tuesday", tasks: 3, taskName: "Task 2" },
+    { day: "Wednesday", tasks: 4, taskName: "Task 3" },
+    { day: "Thursday", tasks: 2, taskName: "Task 4" },
+    { day: "Friday", tasks: 6, taskName: "Task 5" },
+    { day: "Saturday", tasks: 1, taskName: "Task 6" },
+    { day: "Sunday", tasks: 0, taskName: "Task 7" },
+  ];
+  const taskData = [
+    { TotalTasks: 24 },
+    { InProgress: 12 },
+    { Completed: 8 },
+    { Pending: 4 },
+  ];
   return (
-    <div>
+    <div className="dashboard-container">
       <div className="dashboard-header">
         <>
           <h1>Welcome back ,Alex</h1>
@@ -47,6 +62,43 @@ const Dashboard = () => {
           <p className="sub-text"> Need Attention</p>
         </div>
       </div>
+
+      <section className="dashboard-section">
+        <div className="section-header">
+          <h4>Weekly Tasks</h4>
+          <button className="Add-Task"> + Add Task</button>
+        </div>
+        <div className="cards-section">
+          {days.map((day, index) => {
+            return (
+              <div className="task-card" key={index}>
+                <h4>{day.day}</h4>
+                <div className="task-card-content">
+                  <input type="checkbox" />
+                  <p>{day.taskName}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+      <section className="weekly-progress">
+        <div className="section-header">
+          <h4>Weekly Progress</h4>
+        </div>
+        <div className="progress-cards">
+          {taskData.map((task, index) => {
+            return (
+              <div className="progress-card" key={index}>
+                <h4>{Object.keys(task)[0]}</h4>
+                <h1>{task[Object.keys(task)[0]]}</h1>
+              </div>
+            );
+          })}
+        </div>
+        <progress max={100} value={70} className="progress-data" />
+        <p className="status-text">60% of weekly tasks completed</p>
+      </section>
     </div>
   );
 };
