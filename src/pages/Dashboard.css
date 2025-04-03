@@ -1,0 +1,126 @@
+.dashboard-container {
+  background-color: #f9fafc;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding: 20px;
+}
+.dashboard-cards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px;
+}
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-text {
+  text-align: left;
+  padding: 10px 20px;
+}
+.sub-text {
+  /* text-align: left; */
+  padding-left: 20px;
+  color: gray;
+}
+.section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+.Add-Task {
+  background: #4a84e9;
+  width: 8vw;
+  height: 5vh;
+  border: none;
+  color: white;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.cards-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.task-card {
+  display: flex;
+  flex-direction: column;
+  width: 13%;
+  height: 20vh;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+.task-card-content {
+  display: flex;
+  width: 80px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+p {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.weekly-progress{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.progress-card {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+.progress-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.status-text{
+    width:  90%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.progress-data{
+    width: 100%;
+    height: 10px;
+    /* background-color: #e0e0e0; */
+    border-radius: 5px;
+    margin-top: 10px;
+    border-radius: 20px;
+    /* color: #4a84e9; */
+}
+.progress-bar-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
