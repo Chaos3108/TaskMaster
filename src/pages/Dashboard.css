@@ -1,12 +1,13 @@
 .dashboard-container {
-  background-color: #f9fafc;
+  background: #f4f6ff;
+  display: flex;
+  flex-direction: column;
+  width: 88%;
 }
 
 .dashboard-header {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: center; */
   padding: 20px;
 }
 .dashboard-cards {
@@ -15,14 +16,18 @@
   width: 100%;
   justify-content: space-between;
   margin: 10px;
+
 }
 .dashboard-card {
   display: flex;
   flex-direction: column;
   width: 24%;
-  background-color: #f0f0f0;
+
   border-radius: 8px;
   padding: 10px 20px;
+  background-color: #ffffff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
 }
 .card-header {
   display: flex;
@@ -48,13 +53,15 @@
   margin-bottom: 20px;
 }
 .Add-Task {
-  background: #4a84e9;
+  background: #2762ec;
   width: 8vw;
   height: 5vh;
   border: none;
   color: white;
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 5px;
+  cursor: pointer;
+  font-weight: 400;
 }
 .cards-section {
   display: flex;
@@ -62,38 +69,46 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 10px 20px;
 }
 .task-card {
   display: flex;
   flex-direction: column;
-  width: 13%;
+  width: 100%;
   height: 20vh;
-  background-color: #f0f0f0;
+  background-color: #ffffff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
   padding: 10px;
   border-radius: 5px;
 }
 .task-card-content {
   display: flex;
-  width: 80px;
-  justify-content: space-between;
+  width: 100%;
+  /* justify-content: center; */
+  gap: 10px;
   margin-top: 20px;
 }
 p {
   word-break: break-word;
   overflow-wrap: break-word;
 }
-.weekly-progress{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.weekly-progress {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .progress-card {
   display: flex;
   flex-direction: column;
   height: 10vh;
-  background-color: #f0f0f0;
+  background-color: #ffffff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
   padding: 10px;
   border-radius: 5px;
+  width: 22%;
+  margin-bottom: 30px;
 }
 .progress-cards {
   display: flex;
@@ -101,26 +116,33 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 10px 20px;
 }
-.status-text{
-    width:  90%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.status-text {
+  width: 90%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
-.progress-data{
-    width: 100%;
-    height: 10px;
-    /* background-color: #e0e0e0; */
-    border-radius: 5px;
-    margin-top: 10px;
-    border-radius: 20px;
-    /* color: #4a84e9; */
+.progress-data {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border-radius: 20px;
 }
-.progress-bar-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+.card-body {
+  /* background: #000; */
+  width: 13%;
+}
+.task-list-container {
+  display: flex;
+  flex-direction: column;
 }
