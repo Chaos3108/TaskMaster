@@ -1,0 +1,96 @@
+.addTask-container {
+  display: flex;
+  flex-direction: column;
+  background: #f4f6ff;
+  margin: 0px;
+  padding: 0%;
+  width: 100%;
+  height: 90vh;
+}
+.task-titletext {
+  padding: 10px 20px;
+  margin: 10px;
+}
+.sub-heading-text {
+  margin-left: 10px;
+  padding-left: 20px;
+}
+.daily-task-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 10px;
+  align-items: center;
+}
+.date-input {
+  color: gray;
+  width: 8vw;
+  height: 5vh;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.date-container {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.add-task-button {
+  background: #2762ec;
+  width: 8vw;
+  height: 5vh;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 400;
+}
+.tasks-list-container {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.task-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  /* background: #000; */
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.text-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.edit-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: gray;
+}
+.daily-task-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.task-list-container {
+  width: 80%;
+  display: flex;
+  height: auto;
+  margin-top: 20px;
+  flex-direction: column;
+
+  background-color: #ffffff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+}

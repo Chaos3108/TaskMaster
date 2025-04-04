@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { TbProgress } from "react-icons/tb";
 import { TiTick } from "react-icons/ti";
 import { AiFillClockCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { apiNetwork } from "../network";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 const Dashboard = () => {
+  const [tasks, setTasks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const handleAddTask = () => {
+    navigate("/tasks");
+  };
+
+  const getTasks = async () => {
+    setIsLoading(true);
+    try {
+      const response = await apiNetwork.get("/tasks");
+      setTasks([response.tasks]);
+      setIsLoading(false);
+    } catch (e) {
+      console.log(console.error);
+      setIsLoading(false);
+    }
+  };
+  useEffect(() => {
+    getTasks();
+  }, []);
   const days = [
     { day: "Monday", tasks: 5, taskName: "Task 1" },
     { day: "Tuesday", tasks: 3, taskName: "Task 2" },
@@ -20,6 +45,7 @@ const Dashboard = () => {
     { Completed: 8 },
     { Pending: 4 },
   ];
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
@@ -32,7 +58,7 @@ const Dashboard = () => {
         <div className="dashboard-card">
           <div className="card-header">
             <span> Total Tasks </span>
-            <TfiMenuAlt color="#4a84e9" />
+            <TfiMenuAlt color="#2762ec" />
           </div>
           <h2 className="task-text">24</h2>
           <p className="sub-text">8 Completed</p>
@@ -66,21 +92,46 @@ const Dashboard = () => {
       <section className="dashboard-section">
         <div className="section-header">
           <h4>Weekly Tasks</h4>
-          <button className="Add-Task"> + Add Task</button>
+          <button onClick={handleAddTask} className="Add-Task">
+            {" "}
+            + Add Task
+          </button>
         </div>
-        <div className="cards-section">
-          {days.map((day, index) => {
-            return (
-              <div className="task-card" key={index}>
-                <h4>{day.day}</h4>
-                <div className="task-card-content">
-                  <input type="checkbox" />
-                  <p>{day.taskName}</p>
-                </div>
+        {isLoading ? (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height:'8vh'
+            }}
+          >
+            <AiOutlineLoading3Quarters />
+          </div>
+        ) : (
+          <>
+            {" "}
+            {Object.entries(tasks).map(([day, taskList], index) => (
+              <div className="cards-section">
+                {Object.entries(taskList).map(([day, taskItems], index) => (
+                  <div className="card-body" key={index}>
+                    <h4>{day}</h4>
+                    <div className="task-card">
+                      {taskItems.map((item, index) => {
+                        return (
+                          <div className="task-card-content" key={item._id}>
+                            <input type="checkbox" />
+                            <p>{item.task_title}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </>
+        )}
       </section>
       <section className="weekly-progress">
         <div className="section-header">
