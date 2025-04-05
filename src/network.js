@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiKey = process.env.REACT_APP_URL;
-console.log("API Base URL:", apiKey);
+
 
 const instance = axios.create({
   baseURL: "https://task-manager-be-z905.onrender.com",
